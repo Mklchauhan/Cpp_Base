@@ -1,5 +1,6 @@
 /*
-* creating a variable type of structure in the heap inside a function and return its address
+* creating a variable type of structure in the heap inside a 
+* function and return its address
 */
 #include<iostream>
 using namespace std;

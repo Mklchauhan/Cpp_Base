@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++ Debugging (LLDB)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "/Users/mukul/Documents/Cpp_Base/Cpp/Bit Manipulation/a.out",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "/Users/mukul/Documents/Cpp_Base/Cpp/Bit Manipulation",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing",
+          "text": "-interpreter-exec console \"settings set target.preload-symbols false\"",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

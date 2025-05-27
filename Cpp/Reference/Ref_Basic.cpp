@@ -10,18 +10,43 @@
 
 using namespace std;
 
+int play_with_references(){
+  int *i = new int[5];
+  int &refval = *i;
+  for (int index = 0; index < 5; ++index)
+    i[index] = index * 10;
+
+  
+//  int &refval1; //Refval must be initialize
+  int &refval2 = refval;
+  
+  cout<<"Value in the heap"<<endl;
+  for(int index =0; index<5; ++index){
+  cout<<i[index] <<" ";
+  }
+  
+  cout<<endl;
+  cout<<&refval<<endl;
+  cout<<&i<<endl;
+  
+  delete i; 
+  
+  cout<<"Value in the heap after deleting array from heap"<<endl;
+  for(int index =0; index<5; ++index){
+  cout<<i[index] <<" ";
+  }
+  
+  cout<<endl; // kya value ayengi
+  cout<<&refval<<endl; // kya value ayengi --> array ka index 0 ka address
+  cout<<&refval2<<endl; // -->0
+  cout<<&i<<endl; //kya value ayengi --> garbage value
+
+  return 0;
+}
+
 int main()
-{
-    int var1 = 10;
-
-    cout<<"var1 before the refrence"<<var1<<endl;
-    int &var_update = var1; //It should get initialize with declaration
-    cout<<"Address of the var1"<<&var1<<endl;
-    var_update++; // Here it is just alias
-    cout<<"update the var1 by increasing the var_update: "<<var_update<<endl;
-    cout<<"Adress of the var_update"<<&var_update<<endl;
-
-    //Here, Address of the variable will be same for referenced and variable var1
-    
+{  
+    play_with_references();
     return 0;
+
 }
