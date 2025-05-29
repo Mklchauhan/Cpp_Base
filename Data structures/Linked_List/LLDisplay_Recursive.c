@@ -26,6 +26,29 @@ void create_node(int arr[], int number_of_element){
     }
 }
 
+void counting_nodes(struct Node *p){
+    int count = 0;
+    while (p!=NULL)
+    {
+        count++;
+        p=p->next;
+    }
+
+    printf("%d",count);
+}
+
+int add_LLD(struct Node *ptr){
+    int sum =0;
+
+    while (ptr != NULL)
+    {
+        sum+=ptr->data;
+    }
+
+    return sum;
+    
+}
+
 void RDisplay(struct Node *p)
 {
     if(p!=NULL)
@@ -40,7 +63,9 @@ int main(){
     int arr[] = {10,2,3,32,13,5,6};
     int size = sizeof(arr)/sizeof(arr[0]);
 
-    create_node(arr, size);
 
-    RDisplay(first);
+    create_node(arr, size);         // Step 1: Create the list
+    printf("Linked List: ");
+
+    printf("%d\n",add_LLD(first));
 }
