@@ -2,14 +2,36 @@
 
 using namespace std;
 
-struct Node;
-using Data_Node = Node*;
+// struct Node;
+// using Data_Node = Node*;
 
 struct Node
 {
     int Data;
-    Data_Node next;
+    Node *next;
+    // Data_Node next;
 };
+/*
+* Creating the Linked list
+*/
+void create_linked_list(int arr[], int size){
+
+}
+
+
+/*
+* Display all the elements of the Linked list
+*/
+void display(Node *p) 
+{
+    while (p != NULL)
+    {
+        cout<<"Data :"<< p->Data<<endl;
+        p=p->next;
+    }
+    
+};
+
 
 
 int main()
@@ -26,9 +48,10 @@ int main()
     free(head);
     return 0;
 */
+
 /*
 * C++
-*/
+
 
     Node* First_Node = new Node{10,nullptr};
     cout<< "Data: "<< First_Node->Data<< "Address of the Data: "<< &First_Node->Data<<endl;
@@ -36,5 +59,6 @@ int main()
     return 0;
 
     //Now, we are using the concept off aliasing 
+*/
 
 }
