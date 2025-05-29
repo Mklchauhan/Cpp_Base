@@ -39,7 +39,7 @@ int main() {
     // Creating nodes
     struct Node* head = createNode(10);
     head->next = createNode(20);
-    head->next->next = createNode(30);
+    head->next->next` = createNode(30);
 
     printf("Linked List:\n");
     display(head);
