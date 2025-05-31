@@ -26,6 +26,28 @@ void create_node(int arr[], int number_of_element){
     }
 }
 
+void create_new_node(struct Node **start,int data){
+    
+    struct Node *new, *temp;
+    new = (struct Node*)malloc(sizeof(struct Node));
+    new->data = data;
+    new->next = NULL;
+
+    if (*start==NULL)
+    {
+        *start=new;
+    }
+    else
+    {
+        temp=*start;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next=new;
+    }
+}
+
 void counting_nodes(struct Node *p){
     int count = 0;
     while (p!=NULL)
@@ -33,7 +55,6 @@ void counting_nodes(struct Node *p){
         count++;
         p=p->next;
     }
-
     printf("%d",count);
 }
 
@@ -60,12 +81,15 @@ void RDisplay(struct Node *p)
 }
 
 int main(){
+
+    struct Node *start = NULL; 
     int arr[] = {10,2,3,32,13,5,6};
     int size = sizeof(arr)/sizeof(arr[0]);
 
 
     create_node(arr, size);         // Step 1: Create the list
-    printf("Linked List: ");
-
-    printf("%d\n",add_LLD(first));
+    create_new_node(&start,15); 
+    create_new_node(&start,16);
+    create_new_node(&start,78);           // This node will get connected in the last 
+    RDisplay(start);
 }
