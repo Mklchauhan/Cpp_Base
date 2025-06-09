@@ -13,9 +13,7 @@ int *fun(int n){
 int main()
 {
     int *A;
-
     A=fun(5);
 
-//Type your code here
 return 0;
 }

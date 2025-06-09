@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     ll_sanitized
+binary-path:     main
 relocations:     []
 ...

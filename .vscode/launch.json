@@ -5,10 +5,10 @@
       "name": "C++ Debugging (LLDB)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "/Users/mukul/Documents/Cpp_Base/Cpp/Bit Manipulation/a.out",
+      "program": "/Users/mukul/Documents/Cpp_Base/Data structures/Linked_List/a.out",
       "args": [],
       "stopAtEntry": true,
-      "cwd": "/Users/mukul/Documents/Cpp_Base/Cpp/Bit Manipulation",
+      "cwd": "/Users/mukul/Documents/Cpp_Base/Data structures/Linked_List",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb",
@@ -19,6 +19,14 @@
           "ignoreFailures": true
         }
       ]
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": ".",
+      "program": "build/Debug/outDebug"
     }
   ]
 }
