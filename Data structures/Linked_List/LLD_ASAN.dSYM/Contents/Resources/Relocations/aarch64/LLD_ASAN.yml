@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     LLD_ASAN
+relocations:     []
+...

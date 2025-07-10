@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h> 
 
 // Step 1: Define the Node structure
 struct Node {
@@ -19,7 +20,7 @@ struct Node* createNode(int value) {
 void display(struct Node* head) {
     struct Node* temp = head;
     while (temp != NULL) {
-        printf("%d -> ", temp->data);
+        printf("%d ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");
@@ -35,15 +36,30 @@ void freeList(struct Node* head) {
     }
 }
 
+// BAD node that is allocated and never connected = real leak
+void createLeakyNode() {
+    struct Node* leak = (struct Node*)malloc(sizeof(struct Node));
+    leak->data = 999;
+    leak->next = NULL;
+}
+/*
+* 
+*/
+
 int main() {
     // Creating nodes
     struct Node* head = createNode(10);
     head->next = createNode(20);
     head->next->next = createNode(30);
+    head->next->next->next = createNode(50);
+
+    createLeakyNode();
 
     printf("Linked List:\n");
     display(head);
 
-    freeList(head);
+    //freeList(head);
+
+    sleep(30); 
     return 0;
 }
