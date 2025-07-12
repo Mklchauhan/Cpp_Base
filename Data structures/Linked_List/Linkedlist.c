@@ -45,7 +45,7 @@ void InsertNode(struct Node* Head, int index, int value){
   }
   else
   {
-    for(int i=0;i<index;i++)
+    for(int i=0;i<index-1;i++)
     {
       Head = Head->Next;
     }
@@ -70,8 +70,12 @@ int main() {
   int arr[]={3,4};
   int n = sizeof(arr)/sizeof(arr[0]);
   
-  createNode(arr,n);
+  //createNode(arr,n);
+  InsertNode(first,0,42);
   InsertNode(first,1,35);
-  printf("Length of the linked list:%d",countNode(first));
+  InsertNode(first,2,4);
+  InsertNode(first,3,356);
+  printf("Length of the linked list:%d\n",countNode(first));
+  display(first);
   return 0;
   }
