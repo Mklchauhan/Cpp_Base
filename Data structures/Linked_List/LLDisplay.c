@@ -42,9 +42,6 @@ void createLeakyNode() {
     leak->data = 999;
     leak->next = NULL;
 }
-/*
-* 
-*/
 
 int main() {
     // Creating nodes
